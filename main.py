@@ -1,6 +1,5 @@
 import pygame
-import Fish
-
+from game_objects import *
 
 # Initialize Pygame
 pygame.init()
