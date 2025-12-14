@@ -12,5 +12,11 @@ class swimmingFish (self, race, color):
         self.color = color
         self.speed = random.randint(1, 5)
 
-        def move(self):
-            self.x = speed
+
+Bass = {
+    'Name': 'Bass',
+    'Color': "Gray",
+    
+}
+
+print(swimmingFish(Bass))
