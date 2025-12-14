@@ -1,4 +1,5 @@
 import pygame
+import random
 from game_objects import *
 
 # Initialize Pygame
@@ -18,6 +19,8 @@ def main():
     bg_color = (30, 30, 30)
     rect = pygame.Rect(WIDTH // 2 - 25, HEIGHT // 2 - 25, 50, 50)
     rect_color = (200, 50, 50)
+    oceanFloor = pygame.Rect(0, HEIGHT - 50, WIDTH, 50)
+    oceanFloor_color = pygame.Color('tan')
     speed = 300  # pixels per second
 
     while running:
@@ -43,6 +46,8 @@ def main():
 
         screen.fill(bg_color)
         pygame.draw.rect(screen, rect_color, rect)
+        oceanFloor.clamp_ip(pygame.Rect(0, 0, WIDTH, HEIGHT))
+        pygame.draw.rect(screen, oceanFloor_color, oceanFloor)
 
         fps_surf = font.render(f"FPS: {clock.get_fps():.2f}", True, (200, 200, 200))
         screen.blit(fps_surf, (10, 10))
